@@ -1,0 +1,96 @@
+tsc -init
+    update target  to es6
+    uncomment and update outDir to ./dist
+
+npm init
+    -Enter pressed for all prompts and 'y' for final (yes) confirmation
+    -package.json created.
+
+installed Expressjs using below command : 
+    npm install express --save
+
+installed typedef for Expressjs to facilitate coding in typescript(All typedefinition files should be devdependencies)
+    npm install @types/express --save-dev
+
+Added .gitignore file to avoid git commit of certain files.
+    Made entry 'node_modules' to avoid commmit of this folder to git.
+
+Creating app with minimum configuration referring 'Hello World' example on Expressjs website.
+
+Added main.ts
+
+(Ctrl + Shift + P): Configure Default Build Task
+    Select watch.
+(Ctrl + Shift + B): to start build task, need to start it every time after restarting VS code editor.
+
+Add following in scripts object of package.json :
+    "start": "node main.js",
+
+Console.log function does not show on browser console for server side languages; it shows on command prompt 
+where command to start server application is written.
+
+Installed to 
+    npm i nodemon
+
+
+Express can't read post call's responses.
+Third party apps should be used. <bodyparser>
+
+Enable CORS to allow cross origin access. Google the term and would get the code to be written under 'Server' option
+in the website
+
+To install mongoose,
+ npm i mongoose --save
+
+mongoose is an ORM.
+Sequelize ORM is used for SQL Server, MySQL, Postgres. Sequelize is more preferred option than other for SQL dbs.
+
+To install typedef for mongoose,
+    npm install @types/mongoose --save-dev
+
+Mongo db : Backend operations change schema => A required field can be made empty from backend.
+
+const data = new todo(req.body); -> This is for validation purpose, for eg all mandatory fields are present.
+
+In order to debug -
+        tsconfig.json - "sourceMap": true, 
+    Launch.js changes - 
+        "program": "${workspaceFolder}\\src\\main.ts",
+                    "outFiles": [
+                        "${workspaceFolder}/dist/**/*.js"
+
+MiddleWare : Request -> MiddleWare -> Controller OR
+            Controller -> MiddleWare -> Request
+    Request has to pass through MiddleWare to reach to controller. If it fails at MiddleWare, it doesn't reach to
+    controller.
+
+For encryption we use bcryptjs library
+For logging, winston and morgan libraries are available. We would use winston.
+
+---------------------
+Sharding and Replica Sets
+1 Sharding : If one of the sharded clusters is not available, the data saved on it is also not available overall.
+2 Replica Sets : If one replica set is down, data is available on other replica sets.
+
+Mongo DB Features
+1 Backend as a service
+2 Charts
+3 BI Connector
+
+EXPRESS js website= DataBase Integrations -> SQL Server (eg. tds, Sequelize ORM)
+
+-Helmet js can be used to secure applications
+-Compression js for gzipping responses.
+-PM2 Node process manager - good for production
+
+To Do :
+
+Nest JS + Sequelize, (other frameworks,..etc)
+Swagger
+JAMStack
+Serverless
+Electron
+Registration and Login - Connect API and application. Use HTML5 session storage
+gatsby, netlify, Contentful CMS, GraphQL backend
+
+Mongo DB profiling
